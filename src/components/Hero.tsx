@@ -1,40 +1,50 @@
 
 import { Button } from "@/components/ui/button";
+import { ArrowDown } from "lucide-react";
 
 const Hero = () => {
+  const scrollToServices = () => {
+    const servicesSection = document.getElementById("services");
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
-    <section className="py-16 md:py-24 lg:py-32 overflow-hidden">
-      <div className="container px-4 md:px-6">
-        <div className="grid gap-6 lg:grid-cols-[1fr_400px] lg:gap-12 xl:grid-cols-[1fr_500px]">
-          <div className="flex flex-col justify-center space-y-4">
-            <div className="space-y-2">
-              <h1 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                Создаю уникальные <span className="text-primary">веб-дизайны</span>, которые привлекают клиентов
-              </h1>
-              <p className="max-w-[700px] text-muted-foreground md:text-xl">
-                Опытный веб-дизайнер с индивидуальным подходом к каждому клиенту. 
-                Я помогу вам создать сайт, который будет работать на ваш бизнес.
-              </p>
-            </div>
-            <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Button size="lg" className="hover-scale">
-                Заказать дизайн
+    <section className="relative py-20 md:py-32 overflow-hidden bg-gradient-to-b from-accent/20 to-background">
+      <div className="container relative z-10">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
+          <div className="space-y-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              Создаю уникальные <span className="text-gradient">веб-сайты</span> для вашего бизнеса
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-lg">
+              Привет! Я Елена, опытный веб-дизайнер. Помогу привлечь новых клиентов и повысить узнаваемость вашего бренда через современный дизайн.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Button size="lg" className="rounded-full">
+                Обсудить проект
               </Button>
-              <Button size="lg" variant="outline" className="hover-scale">
-                Посмотреть работы
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="rounded-full"
+                onClick={scrollToServices}
+              >
+                Узнать больше
+                <ArrowDown className="ml-2 h-4 w-4" />
               </Button>
             </div>
           </div>
-          <div className="mx-auto flex w-full max-w-[500px] items-center justify-center lg:justify-end">
-            <div className="aspect-square overflow-hidden rounded-full bg-muted">
-              <img
-                src="/placeholder.svg"
-                alt="Елена Афанасьева"
-                width={500}
-                height={500}
-                className="object-cover"
+          <div className="relative">
+            <div className="relative z-10 rounded-lg overflow-hidden shadow-2xl animate-fade-in opacity-0" style={{ animationDelay: "0.2s" }}>
+              <img 
+                src="https://cdn.poehali.dev/files/e14d094a-590a-4331-930a-7e982d816a97.jpeg" 
+                alt="Дизайн сайта" 
+                className="w-full h-auto object-cover"
               />
             </div>
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full max-w-[80%] max-h-[80%] rounded-full bg-primary/20 blur-3xl -z-10"></div>
           </div>
         </div>
       </div>

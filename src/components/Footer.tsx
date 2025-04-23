@@ -1,46 +1,93 @@
 
-import { Separator } from "@/components/ui/separator";
+import { Button } from "@/components/ui/button";
+import { Instagram, Twitter, Linkedin, Github } from "lucide-react";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-muted/30 py-6 md:py-12">
-      <div className="container px-4 md:px-6">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4 md:gap-8">
-          <div className="text-center md:text-left">
-            <h3 className="text-lg font-semibold">Елена Афанасьева</h3>
-            <p className="text-sm text-muted-foreground">Веб-дизайнер</p>
+    <footer className="border-t bg-muted/30">
+      <div className="container py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div className="md:col-span-2">
+            <h3 className="text-xl font-bold mb-4">Елена Афанасьева</h3>
+            <p className="text-muted-foreground mb-4">
+              Создаю уникальные веб-сайты, которые привлекают внимание и увеличивают конверсии вашего бизнеса.
+            </p>
+            <div className="flex space-x-4">
+              <Button variant="ghost" size="icon" className="rounded-full">
+                <Instagram className="h-5 w-5" />
+                <span className="sr-only">Instagram</span>
+              </Button>
+              <Button variant="ghost" size="icon" className="rounded-full">
+                <Twitter className="h-5 w-5" />
+                <span className="sr-only">Twitter</span>
+              </Button>
+              <Button variant="ghost" size="icon" className="rounded-full">
+                <Linkedin className="h-5 w-5" />
+                <span className="sr-only">LinkedIn</span>
+              </Button>
+              <Button variant="ghost" size="icon" className="rounded-full">
+                <Github className="h-5 w-5" />
+                <span className="sr-only">GitHub</span>
+              </Button>
+            </div>
           </div>
-
-          <nav className="flex gap-4 md:gap-6">
-            <a href="#" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Главная
-            </a>
-            <a href="#services" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Услуги
-            </a>
-            <a href="#portfolio" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Портфолио
-            </a>
-            <a href="#process" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Процесс
-            </a>
-            <a href="#contact" className="text-sm text-muted-foreground hover:text-foreground transition-colors">
-              Контакты
-            </a>
-          </nav>
+          
+          <div>
+            <h4 className="font-medium mb-4">Навигация</h4>
+            <ul className="space-y-2">
+              <li>
+                <a href="#services" className="text-muted-foreground hover:text-primary transition-colors">
+                  Услуги
+                </a>
+              </li>
+              <li>
+                <a href="#portfolio" className="text-muted-foreground hover:text-primary transition-colors">
+                  Портфолио
+                </a>
+              </li>
+              <li>
+                <a href="#process" className="text-muted-foreground hover:text-primary transition-colors">
+                  Процесс
+                </a>
+              </li>
+              <li>
+                <a href="#testimonials" className="text-muted-foreground hover:text-primary transition-colors">
+                  Отзывы
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="text-muted-foreground hover:text-primary transition-colors">
+                  Контакты
+                </a>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 className="font-medium mb-4">Контакты</h4>
+            <ul className="space-y-2">
+              <li className="text-muted-foreground">
+                <span className="font-medium text-foreground">Телефон:</span> +7 920 271 56 33
+              </li>
+              <li className="text-muted-foreground">
+                <span className="font-medium text-foreground">Telegram:</span> @afnelena
+              </li>
+            </ul>
+          </div>
         </div>
-
-        <Separator className="my-6" />
-
-        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-sm text-muted-foreground text-center md:text-left">
-            &copy; {currentYear} Елена Афанасьева. Все права защищены.
+        
+        <div className="border-t mt-10 pt-6 flex flex-col md:flex-row justify-between items-center">
+          <p className="text-sm text-muted-foreground">
+            © {currentYear} Елена Афанасьева. Все права защищены.
           </p>
-          <div className="flex gap-4">
-            <a href="https://pin.it/6Ew5eP29Z" target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-foreground">
-              Pinterest
+          <div className="flex space-x-4 mt-4 md:mt-0">
+            <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              Политика конфиденциальности
+            </a>
+            <a href="#" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              Условия использования
             </a>
           </div>
         </div>
